@@ -38,6 +38,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2N-vR-jwG">
                                         <rect key="frame" x="0.0" y="74.5" width="141" height="30"/>
                                         <state key="normal" title="Set default label text"/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5YD-ip-ciV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
