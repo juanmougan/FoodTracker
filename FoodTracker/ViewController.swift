@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
@@ -17,7 +17,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Handle the text field’s user input through delegate callbacks.
+        nameTextField.delegate = self
+    }
+
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()    // code to resign the text field’s first-responder status
+        
+        // Because this method returns a Boolean value, returning the value true indicates that the text field should respond to the 
+        // user pressing the Return key by dismissing the keyboard.
+        return true
+    }
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        mealNameLabel.text = textField.text
     }
     
     // MARK: Actions
